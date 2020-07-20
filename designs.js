@@ -12,8 +12,15 @@ function makeGrid(gridHeight, gridWidth) {
     };
 }
 
+function clearCanvas() {
+	while (tableEl.firstChild) {
+  		tableEl.removeChild(tableEl.firstChild);
+	}
+}
+
 function submitForm(evt) {
 	evt.preventDefault();
+	clearCanvas();
 	const formEl = evt.srcElement;
 	const heightInputEl = formEl.querySelector('#inputHeight');
 	const height = parseInt(heightInputEl.value);
